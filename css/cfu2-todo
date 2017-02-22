@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery CFU 2</title>
+    <style media="screen">
+      @import url('https://fonts.googleapis.com/css?family=Eczar');
+
+      body {
+        font-family: 'Eczar', sans-serif;
+      }
+
+      ol li {
+        cursor: pointer;
+      }
+
+      .container {
+        background-color: rgb(132, 132, 132);
+        width: 300px;
+        padding: 15px;
+        border-radius: 5px;
+      }
+
+      .done-task {
+        text-decoration: line-through;
+        color: #aaaaaa;
+      }
+
+      #todoList {
+        background-color: antiquewhite;
+        border-radius: 5px;
+        padding: 15px 40px;
+      }
+
+      #todoInput {
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 14px;
+        width: 240px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+        // Add your code here...
+
+        // We will be creating a simulation of a basic To Do's app. Use jQuery as much as possible
+
+        // Create a text <input> element with id "todoInput" for typing in a new todo item.
+        $('.container').prepend('<input type = "text" id="todoInput"></input>')
+
+        // Create a <button> element with id "todoSubmit" whose button text is "Add"
+        $('.container').append('<button type = "button" id="todoSubmit"></input>')
+
+        // Create an <ol> element with id "todoList" for our created todo's to live in
+        $('.container').append('<ol id="todoList"></ol>')
+
+        // Append the <input>, <button>, and <ol> you just created to the <div> of class "container", in that order
+
+
+        // Create 2 <li> elements whose inner text is each some made up task. Append these to the <ol> element you made above.
+        $('ol').append('<li id="todoItem">Go to school</li>')
+        $('ol').append('<li id="todoItem">Go to sleep</li>')
+        // Create and attach another <li> with a made up task BEFORE the second task you appended above
+         $('ol li').next().before('<li id="todoItem">drive Lyft</li>')
+
+        // Add functionality to the button so when clicked,
+        // it takes the text input value and creates a new <li> under the <ol> for the todo item.
+        // It should also blank out the value of the text input
+        $('#todoSubmit').click(function() {
+         var inputVal = $('input').val()
+         $('#todoList').append('<li id="todoItem">' + inputVal +'</li>')
+         $(#todoList)
+       })
+
+
+        // Add another event listener so that when an <li> is clicked, it will toggle the class "done-task" on that <li>
+        // Toggling means the first time you click, the class is added. Click again, it's removed.
+        // HINT: add the event listener to the <ol>, and use event.target to reference the specific <li> that was clicked within that
+        // HINT: you can't call jQuery functions on raw HTML/DOM elements
+
+
+        // Add an event listener on the click for the <button id="todoMinimize"> so that when clicked it "slide" toggles the container div
+        // HINT: jQuery docs on slide animations
+
+
+      });
+    </script>
+  </head>
+  <body>
+    <!-- TYPE NOTHING HERE -->
+    <h3>SO MUCH TO DO</h3><button type="button" name="minimize" id="todoMinimize">&darr;</button>
+    <div class="container"></div>
+  </body>
+</html>

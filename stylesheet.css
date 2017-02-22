@@ -1,0 +1,10 @@
+header {
+background: url(img/kitchen.jpg);
+justify-content: center;
+backgroud-width: 100%
+flex-direction:column;
+height:400px;
+}
+body {
+  font-family: Amatic SC;
+}
